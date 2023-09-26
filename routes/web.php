@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('auth.login');
+});
+
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('pages.index');
@@ -20,5 +24,5 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
 Route::middleware('auth')->prefix('user')->group(function () {
-    
+
 });
