@@ -74,25 +74,25 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="{{ route('home') }}" class="nav-link active">
                                     <i class="nav-icon fas fa-columns"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./pages/users.html" class="nav-link">
+                                <a href="{{ route('create-user') }}" class="nav-link">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>Users</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./pages/job.html" class="nav-link">
+                                <a href="{{ route('make-job') }}" class="nav-link">
                                     <i class="nav-icon fas fa-list"></i>
                                     <p>Jobs</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./pages/reports.html" class="nav-link">
+                                <a href="{{ route('get-reports') }}" class="nav-link">
                                     <i class="nav-icon fas fa-signal"></i>
                                     <p>Reports</p>
                                 </a>
@@ -104,10 +104,13 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('logout') }}" class="nav-link">
+                                <a type="button" class="nav-link" onclick="document.getElementById('logout').submit()">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Logout</p>
                                 </a>
+                                <form action="{{  route('logout') }}" id="logout" method="post">
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </nav>
