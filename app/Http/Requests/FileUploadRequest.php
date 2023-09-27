@@ -31,7 +31,7 @@ class FileUploadRequest extends FormRequest
     public function messages()
     {
         return [
-            'pdf.mimes' => 'The uploaded file must be a file of type: pdf.',
+            'pdf.mimes' => 'The uploaded file must be a PDF.',
         ];
     }
 }
