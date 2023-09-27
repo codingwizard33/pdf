@@ -84,178 +84,71 @@
                                         <div class="card-body table-responsive p-0">
                                             <table class="table table-striped projects">
                                                 <thead>
-                                                <tr>
-                                                    <th>
-                                                        Username
-                                                    </th>
-                                                    <th>
-                                                        Date of Job
-                                                    </th>
-                                                    <th>
-                                                        Name of File
-                                                    </th>
-                                                    <th>
-                                                        Integrity Chech
-                                                    </th>
-                                                    <th>
-                                                        PDF Creation
-                                                        Date
-                                                    </th>
-                                                    <th>
-                                                        PDF Modified
-                                                        Date
-                                                    </th>
-                                                    <th>
-                                                        Process
-                                                        Report
-                                                    </th>
-                                                </tr>
+                                                    <tr>
+                                                        <th>
+                                                            Username
+                                                        </th>
+                                                        <th>
+                                                            Date of Job
+                                                        </th>
+                                                        <th>
+                                                            Name of File
+                                                        </th>
+                                                        <th>
+                                                            Integrity Chech
+                                                        </th>
+                                                        <th>
+                                                            PDF Creation
+                                                            Date
+                                                        </th>
+                                                        <th>
+                                                            PDF Modified
+                                                            Date
+                                                        </th>
+                                                        <th>
+                                                            Process
+                                                            Report
+                                                        </th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <span>
-                                                          Claudio Barrera
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          08 Jan, 2023
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          XYZ Bank
-                                                            Statement_OUTPUT
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-success">
-                                                             Completed
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          12 Nov, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          13 Dec, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <button class="btn btn-warning">Process</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span>
-                                                          Claudio Barrera
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          08 Jan, 2023
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          XYZ Bank
-                                                            Statement_OUTPUT
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-success">
-                                                             Completed
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          12 Nov, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          13 Dec, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <button class="btn btn-success">Processed</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span>
-                                                          Claudio Barrera
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          08 Jan, 2023
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          XYZ Bank
-                                                            Statement_OUTPUT
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-success">
-                                                             Completed
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          12 Nov, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          13 Dec, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <button class="btn btn-warning">Process</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <span>
-                                                          Claudio Barrera
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          08 Jan, 2023
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          XYZ Bank
-                                                            Statement_OUTPUT
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-success">
-                                                             Completed
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          12 Nov, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span>
-                                                          13 Dec, 2022
-                                                        </span>
-                                                    </td>
-                                                    <td class="project-actions">
-                                                        <button class="btn btn-success">Processed</button>
-                                                    </td>
-                                                </tr>
+                                                    @foreach ($jobs as $job)
+                                                        <tr>
+                                                            <td>
+                                                                <span>
+                                                                    {{ $job->user_name }}
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>
+                                                                    {{ $job->created_at }}
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>
+                                                                    {{ $job->file_name }}
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span class="text-success">
+                                                                    {{ $job->validated }}
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>
+                                                                    {{ $job->pdf_creation_date }}
+                                                                </span>
+                                                            </td>
+                                                            <td>
+                                                                <span>
+                                                                    {{ $job->pdf_modified_date }}
+                                                                </span>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <button class="btn btn-warning">Process</button>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

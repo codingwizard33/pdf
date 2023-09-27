@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
 use Illuminate\Http\Request;
 
 class JobController extends Controller
 {
     public function makeJob()
     {
-        return view('pages.job');
+        $jobs = Job::all();
+        
+        return view('pages.job', [
+            'jobs' => $jobs
+        ]);
     }
 }
