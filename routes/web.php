@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ReportsController;
@@ -27,4 +28,6 @@ Route::middleware('auth')->group(function () {
     Route::get('make-job', [JobController::class, 'makeJob'])->name('make-job');
     Route::get('get-users', [UsersController::class, 'getUsers'])->name('get-users');
     Route::get('get-reports', [ReportsController::class, 'getReports'])->name('get-reports');
+
+    Route::post('upload-pdf', [FileUploadController::class, 'uploadPdf'])->name('upload-pdf');
 });

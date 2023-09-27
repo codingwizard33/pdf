@@ -54,10 +54,17 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form action="{{ route('upload-pdf') }}" method="POST" id="uploadForm" enctype="multipart/form-data">
+                                    @csrf
+
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1">Insert Upload file to Gallery</label>
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" name="pdf" class="form-control-file{{ $errors->has('pdf') ? ' is-invalid' : '' }}" id="exampleFormControlFile1">
+                                        @if ($errors->has('pdf'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('pdf') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                 </form>
                             </div>
@@ -262,4 +269,10 @@
             </div>
         </section>
     </div>
+
+    <script>
+        document.getElementById('exampleFormControlFile1').addEventListener('change', function() {
+            document.getElementById('uploadForm').submit();
+        });
+    </script>
 @endsection
