@@ -18,7 +18,6 @@ class PdfParseService
         $parser = new Parser();
         $pdf = $parser->parseFile('storage/' . $this->file);
         $metaData = $pdf->getDetails();
-        // dd((object) $metaData);
 
         return (object) $metaData;
     }
