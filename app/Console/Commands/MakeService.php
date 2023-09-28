@@ -44,10 +44,8 @@ class MakeService extends Command
 
         $namespace = 'App\Services';
 
-        // Create the directory if it doesn't exist
         File::ensureDirectoryExists(app_path('Services'));
 
-        // Create the service class file with the namespace and an empty class
         File::put($filePath, "<?php\n\nnamespace $namespace;\n\nclass $className\n{\n   //\n}\n");
 
         $this->info("Service class $className created successfully!");

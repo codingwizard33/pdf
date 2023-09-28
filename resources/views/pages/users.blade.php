@@ -40,7 +40,7 @@
                             </div>
                             <div class="chart_footer">
                                 <a href="#">
-                                    <img src="./../dist/img/arrow-up-light.png" alt="">
+                                    <img src="{{ asset('dist/img/arrow-up-light.png') }}" alt="">
                                 </a>
                             </div>
 
