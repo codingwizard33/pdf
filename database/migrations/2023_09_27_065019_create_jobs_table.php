@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('file_name');
             $table->string('validated');
             $table->string('path');
-            $table->dateTime('pdf_creation_date');
-            $table->dateTime('pdf_modified_date');
+            $table->string('pdf_creation_date');
+            $table->string('pdf_modified_date');
             $table->timestamps();
         });
     }

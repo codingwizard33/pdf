@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Job;
+use DateTime;
 
 class SaveJobService
 {
@@ -15,12 +16,17 @@ class SaveJobService
 
     public function __construct($file, $metadata)
     {
+        $created = new DateTime($metadata->CreationDate);
+        $createdDate = $created->format("Y-m-d H:i");
+        $modified = new DateTime($metadata->CreationDate);
+        $modifiedDate = $modified->format("Y-m-d H:i");
+
         $this->path = $file->path;
         $this->userName = $metadata->Author;
         $this->fileName = $file->fileName;
         $this->validated = $file->validated;
-        $this->pdfCreationDate = $metadata->CreationDate;
-        $this->pdfModifiedDate = $metadata->ModDate;
+        $this->pdfCreationDate = $createdDate;
+        $this->pdfModifiedDate = $modifiedDate;
     }
 
     public function saveJob()
