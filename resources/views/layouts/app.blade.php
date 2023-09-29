@@ -74,31 +74,31 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">
                             <li class="nav-item">
-                                <a href="{{ route('home') }}" class="nav-link active">
+                                <a href="{{ route('home') }}" class="nav-link {{ Route::currentRouteNamed('home') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-columns"></i>
                                     <p>Dashboard</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('create-user') }}" class="nav-link">
+                                <a href="{{ route('create-user') }}" class="nav-link {{ Route::currentRouteNamed('create-user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>Add-User</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('get-users') }}" class="nav-link">
+                                <a href="{{ route('get-users') }}" class="nav-link {{ Route::currentRouteNamed('get-users') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>Users</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('make-job') }}" class="nav-link">
+                                <a href="{{ route('make-job') }}" class="nav-link {{ Route::currentRouteNamed('make-job') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-list"></i>
                                     <p>Jobs</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('get-reports') }}" class="nav-link">
+                                <a href="{{ route('get-reports') }}" class="nav-link {{ Route::currentRouteNamed('get-reports') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-signal"></i>
                                     <p>Reports</p>
                                 </a>
