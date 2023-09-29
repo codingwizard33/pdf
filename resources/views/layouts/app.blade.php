@@ -79,12 +79,12 @@
                                     <p>Dashboard</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a href="{{ route('create-user') }}" class="nav-link {{ Route::currentRouteNamed('create-user') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
                                     <p>Add-User</p>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav-item">
                                 <a href="{{ route('get-users') }}" class="nav-link {{ Route::currentRouteNamed('get-users') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-users"></i>
