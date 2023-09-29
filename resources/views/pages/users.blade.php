@@ -64,13 +64,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" class="form-control" placeholder="Email" required>
+                                        <label for="username ">User Name</label>
+                                        <input type="text" id="username " class="form-control" placeholder="User Name" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="tel">Phone</label>
-                                        <input type="tel" id="tel" class="form-control" placeholder="Phone" required>
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" class="form-control" placeholder="Email" required>
                                     </div>
 
                                     <div class="form-group">

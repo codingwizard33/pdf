@@ -95,7 +95,7 @@
                                                             Name of File
                                                         </th>
                                                         <th>
-                                                            Chech
+                                                            Integrity Check
                                                         </th>
                                                         <th>
                                                             PDF Creation
