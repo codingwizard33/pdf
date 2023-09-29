@@ -82,6 +82,12 @@
                             <li class="nav-item">
                                 <a href="{{ route('create-user') }}" class="nav-link">
                                     <i class="nav-icon fas fa-users"></i>
+                                    <p>Add-User</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('get-users') }}" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
                                     <p>Users</p>
                                 </a>
                             </li>

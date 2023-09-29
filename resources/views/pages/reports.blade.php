@@ -52,11 +52,6 @@
                             <div class="card-header">
                                 <div class="w-100 h-50">
                                     <div class="card">
-                                        <div class="card-header">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <h3 class="card-title">Reports</h3>
-                                            </div>
-                                        </div>
                                         <div class="card-body table-responsive p-0">
                                             <table class="table table-striped projects">
                                                 <thead>
