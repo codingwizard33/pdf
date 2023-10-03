@@ -50,43 +50,76 @@
                         <div class="card">
                             <div class="card-header">
                                 <h3>Add User</h3>
-                                <form action="" method="post">
+                                <form action="{{ route('user-create') }}" method="post">
+                                    @csrf
+
                                     <div class="form-group">
                                         <label for="firstName">First Name</label>
-                                        <input type="text" id="firstName" class="form-control" placeholder="First Name"
+                                        <input type="text" name="first_name" id="firstName" class="form-control{{ $errors->has('first_name') ? ' is-invalid' : '' }}" placeholder="First Name"
                                                required>
+                                        @if ($errors->has('first_name'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('first_name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="lastName">Last Name</label>
-                                        <input type="text" id="lastName" class="form-control" placeholder="Last Name"
+                                        <input type="text" name="last_name" id="lastName" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" placeholder="Last Name"
                                                required>
+                                        @if ($errors->has('last_name'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('last_name') }}</strong>
+                                           </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="username ">User Name</label>
-                                        <input type="text" id="username " class="form-control" placeholder="User Name" required>
+                                        <input type="text" name="user_name" id="username " class="form-control{{ $errors->has('user_name') ? ' is-invalid' : '' }}" placeholder="User Name" required>
+                                        @if ($errors->has('user_name'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('user_name') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" id="email" class="form-control" placeholder="Email" required>
+                                        <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" required>
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="organization">Organization</label>
-                                        <input type="text" id="organization" class="form-control" placeholder="Organization"
+                                        <input type="text" name="organization" id="organization" class="form-control{{ $errors->has('organization') ? ' is-invalid' : '' }}" placeholder="Organization"
                                                required>
+                                        @if ($errors->has('organization'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('organization') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
 
                                     <div class="form-group">
                                         <label for="role">Role</label>
-                                        <select id="role" class="form-control custom-select" required>
-                                            <option>Select Role</option>
-                                            <option value="role_1">Role 1</option>
-                                            <option value="role_2">Role 2</option>
-                                            <option value="role_3">Role 3</option>
+                                        <select id="role" name="role" class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }} custom-select" required>
+                                            @foreach ($roles as $role)
+                                                <option value="{{ $role->name }}">{{ $role->name }}</option>
+                                            @endforeach
                                         </select>
+
+                                        @if ($errors->has('role'))
+                                            <span class="invalid-feedback">
+                                                <strong>{{ $errors->first('role') }}</strong>
+                                            </span>
+                                        @endif
+
                                     </div>
 
                                     <button type="submit" class="btn btn-success float-right">Add New User</button>
@@ -125,7 +158,31 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
+                                                    @foreach ($users as $user)
+                                                        <tr>
+                                                            <td>
+                                                                <span>{{ $user->name }}</span>
+                                                            </td>
+                                                            <td>
+                                                                <span>{{ $user->user_name }}</span>
+                                                            </td>
+                                                            <td>
+                                                                <span>{{ $user->created_at }}</span>
+                                                            </td>
+                                                            <td>
+                                                                <span></span>
+                                                            </td>
+                                                            <td class="project-actions">
+                                                                <a class="btn btn-info btn-sm" href="#">
+                                                                    <i class="fas fa-pencil-alt"></i>
+                                                                </a>
+                                                                <a class="btn btn-danger btn-sm" href="#">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                {{-- <tr>
                                                     <td>
                                                         <span>
                                                           Claudio Barrera
@@ -244,7 +301,7 @@
                                                             <i class="fas fa-trash"></i>
                                                         </a>
                                                     </td>
-                                                </tr>
+                                                </tr> --}}
                                                 </tbody>
                                             </table>
                                         </div>

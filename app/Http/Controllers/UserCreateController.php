@@ -15,6 +15,6 @@ class UserCreateController extends Controller
         $createUser = new UserCreateService($user);
         $createUser->createUser();
 
-        return redirect()->route('create-user')->with(['message' => 'Success!']);
+        return redirect()->route('get-users')->with(['message' => 'Success!']);
     }
 }

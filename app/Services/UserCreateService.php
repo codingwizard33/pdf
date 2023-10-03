@@ -9,10 +9,10 @@ use Spatie\Permission\Traits\HasRoles;
 class UserCreateService
 {
     use HasRoles;
-    
+
     protected $name;
     protected $email;
-    protected $password;
+    // protected $password;
     protected $organization;
     protected $userName;
     protected $role;
@@ -21,7 +21,7 @@ class UserCreateService
     {
         $this->name = $data['first_name'] . ' ' . $data['last_name'];
         $this->email = $data['email'];
-        $this->password = Hash::make($data['password']);
+        // $this->password = Hash::make($data['password']);
         $this->organization = $data['organization'];
         $this->userName = $data['user_name'];
         $this->role = $data['role'];
@@ -32,7 +32,7 @@ class UserCreateService
         User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => $this->password,
+            // 'password' => $this->password,
             'organization' => $this->organization,
             'user_name' => $this->userName,
         ])->assignRole($this->role);
