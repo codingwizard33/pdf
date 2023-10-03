@@ -19,11 +19,10 @@ class FileUploadService
     {
         $hash = Hash::make(file_get_contents($this->pdf));
 
-        $originalName = $this->pdf->getClientOriginalName();
-        
-        $path = $this->pdf->storeAs('pdfs', $originalName, 'public');
+        $path = $this->pdf->store('pdfs', 'public');
 
         $file = Storage::disk('public')->get($path);
+        $originalName = str_replace("pdfs/", "", $path);
         $checkSum = Hash::make($file);
 
         $data = array();
