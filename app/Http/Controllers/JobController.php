@@ -9,8 +9,8 @@ class JobController extends Controller
 {
     public function makeJob()
     {
-        $jobs = Job::all();
-        
+        $jobs = Job::orderBy('created_at', 'desc')->get();
+
         return view('pages.job', [
             'jobs' => $jobs
         ]);
