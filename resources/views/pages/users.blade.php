@@ -7,6 +7,10 @@
                 <div class="row mb-2">
                     <div class="col-sm-6">
                         <h1 class="m-0">Users</h1>
+                        <a href="{{ route('create-user') }}" class="btn btn-outline-success mt-3">
+                            <i class="nav-icon fas fa-users"></i>
+                            Add User
+                        </a>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
