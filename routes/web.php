@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AddUserController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\CheckPdfController;
 use App\Http\Controllers\FileUploadController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\OpenFileController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\UserCreateController;
 use App\Http\Controllers\UsersController;
@@ -31,4 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::get('get-reports', [ReportsController::class, 'getReports'])->name('get-reports');
     Route::post('create-user', [UserCreateController::class, 'createUser'])->name('user-create');
     Route::post('upload-pdf', [FileUploadController::class, 'uploadPdf'])->name('upload-pdf');
+    Route::post('check-file', [CheckPdfController::class, 'checkFile'])->name('check-file');
+    Route::get('open-file/{id}', [OpenFileController::class, 'index'])->name('open-file');
 });

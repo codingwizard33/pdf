@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\Job;
 use DateTime;
+use App\Models\Job;
 
 class SaveJobService
 {
@@ -18,7 +18,7 @@ class SaveJobService
     {
         $created = new DateTime($metadata->CreationDate);
         $createdDate = $created->format("Y-m-d H:i");
-        $modified = new DateTime($metadata->CreationDate);
+        $modified = new DateTime($metadata->ModDate);
         $modifiedDate = $modified->format("Y-m-d H:i");
 
         $this->path = $file->path;

@@ -40,7 +40,7 @@
                             </div>
                             <div class="chart_footer">
                                 <a href="#">
-                                    <img src="./dist/img/arrow-up-light.png" alt="">
+                                    <img src="{{ asset('dist/img/arrow-up-light.png') }}" alt="">
                                 </a>
                             </div>
 
@@ -126,7 +126,11 @@
                                                             </td>
                                                             <td>
                                                                 <span>
-                                                                    {{ $job->file_name }}
+                                                                    @if ($job->status == true)
+                                                                        <a target="_blank" href="{{ route('open-file', $job->id) }}">{{ $job->file_name }}</a>
+                                                                    @else
+                                                                        {{ $job->file_name }}
+                                                                    @endif
                                                                 </span>
                                                             </td>
                                                             <td>
@@ -145,7 +149,15 @@
                                                                 </span>
                                                             </td>
                                                             <td class="project-actions">
-                                                                <button class="btn btn-warning">Process</button>
+                                                                @if ($job->status == true)
+                                                                    <button class="btn btn-success">Processed</button>
+                                                                @else
+                                                                    <form action="{{ route('check-file') }}" method="post">
+                                                                        @csrf
+                                                                        <input type="hidden" name="job_id" value="{{ $job->id }}">
+                                                                        <button class="btn btn-warning">Process</button>
+                                                                    </form>
+                                                                @endif
                                                             </td>
                                                         </tr>
                                                     @endforeach
