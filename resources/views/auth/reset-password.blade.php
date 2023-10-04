@@ -41,7 +41,7 @@
                         </form>
                         <div class="d-flex justify-content-between mt-4">
                             <a class="btn btn-outline-info" href="{{ route('login') }}">Login</a>
-                            <a class="btn btn-outline-info" href="#">Register</a>
+                            {{-- <a class="btn btn-outline-info" href="#">Register</a> --}}
                         </div>
                     </div>
                 </div>
