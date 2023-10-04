@@ -15,6 +15,8 @@ class Job extends Model
         'file_name',
         'validated',
         'pdf_creation_date',
-        'pdf_modified_date'
+        'pdf_modified_date',
+        'status',
+        'edited'
     ];
 }

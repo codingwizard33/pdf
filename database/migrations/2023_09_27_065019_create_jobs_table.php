@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('path');
             $table->string('pdf_creation_date');
             $table->string('pdf_modified_date');
+            $table->boolean('status')->default(false);
+            $table->string('edited')->nullable();
             $table->timestamps();
         });
     }
