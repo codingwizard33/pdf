@@ -8,6 +8,10 @@ class BaseController extends Controller
 {
     public function root()
     {
+        if (auth()->user()) {
+            return redirect()->route('home');
+        }
+        
         return view('auth.login');
     }
 }
