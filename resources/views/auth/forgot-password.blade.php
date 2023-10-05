@@ -30,11 +30,18 @@
                         <p class="card-text py-2 text-center">
                             Enter your email address and we'll send you an email with instructions to reset your password.
                         </p>
-                        <form action="">
+                        <form action="{{ route('password.email') }}" method="POST">
                             @csrf
+
                             <div class="form-outline">
                                 <label class="form-label" for="typeEmail">Email</label>
-                                <input type="email" id="typeEmail" class="form-control mb-3" required />
+                                <input type="email" name="email" id="typeEmail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} mb-3" required />
+                                
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <button type="submit" class="btn btn-success w-100">Reset password</button>
                         </form>

@@ -44,7 +44,7 @@
                                         <input type="password" name="password" class="form-control" placeholder="Password" id="pas" onkeyup="success()" required/>
                                     </div>
 
-                                    <a href="">Forgot Password?</a>
+                                    <a href="{{ route('password.request') }}">Forgot Password?</a>
 
                                     <input type="submit" value="Continue" class="btn btn-success w-100 mt-3 mb-3" id="continue" disabled>
 
