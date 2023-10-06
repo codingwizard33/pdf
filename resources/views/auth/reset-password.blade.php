@@ -30,19 +30,22 @@
                         <form action="{{ route('password.update') }}" method="POST">
                             @csrf
 
+                            <input type="hidden" name="token" value="{{ request()->token }}">
+                            <input type="hidden" name="email" value="{{ request()->email }}">
                             <div class="form-outline">
                                 <label class="form-label" for="new_password">New Password</label>
                                 <input type="password" name="password" id="new_password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} mb-3" required />
-                            </div>
-                            <div class="form-outline">
-                                <label class="form-label" for="confirm_password">Confirm Password</label>
-                                <input type="password" name="password_confirmation" id="confirm_password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} mb-3" required />
-                                
+
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+                            <div class="form-outline">
+                                <label class="form-label" for="confirm_password">Confirm Password</label>
+                                <input type="password" name="password_confirmation" id="confirm_password" class="form-control mb-3" required />
+
                             </div>
                             <button type="submit" class="btn btn-success w-100">Reset password</button>
                         </form>
