@@ -36,11 +36,16 @@
                             <div class="form-outline">
                                 <label class="form-label" for="typeEmail">Email</label>
                                 <input type="email" name="email" id="typeEmail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} mb-3" required />
-                                
+
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
+                                @endif
+                                @if (session('status'))
+                                    <div class="mb-4 font-medium text-sm text-success-600">
+                                        {{ session('status') }}
+                                    </div>
                                 @endif
                             </div>
                             <button type="submit" class="btn btn-success w-100">Reset password</button>

@@ -27,15 +27,22 @@
                 <div class="card">
                     <div class="card-header h5 text-white text-center bg-info">Reset Password</div>
                     <div class="card-body px-5">
-                        <form action="">
+                        <form action="{{ route('password.update') }}" method="POST">
                             @csrf
+
                             <div class="form-outline">
                                 <label class="form-label" for="new_password">New Password</label>
-                                <input type="password" id="new_password" class="form-control mb-3" required />
+                                <input type="password" name="password" id="new_password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} mb-3" required />
                             </div>
                             <div class="form-outline">
                                 <label class="form-label" for="confirm_password">Confirm Password</label>
-                                <input type="password" id="confirm_password" class="form-control mb-3" required />
+                                <input type="password" name="password_confirmation" id="confirm_password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} mb-3" required />
+                                
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <button type="submit" class="btn btn-success w-100">Reset password</button>
                         </form>
