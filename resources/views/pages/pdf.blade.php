@@ -40,8 +40,9 @@
                                 <h3 class="card-title"></h3>
                             </div>
                         </div>
+                        {{-- @dd(asset("pdfimgs/$path")) --}}
                         <div class="card-body">
-                            <embed src="{{ asset($file->path) }}" id="embed">
+                            <embed src="{{ asset("storage/pdfimgs/$path") }}" id="embed">
                         </div>
                     </div>
                 </div>
@@ -50,10 +51,10 @@
     </div>
 
     <script>
-        let screen = document.querySelector('.card-body');
-        console.log(screen.offsetWidth);
-        let embed = document.getElementById('embed');
-        embed.width = screen.offsetWidth - 50;
-        embed.height = window.innerHeight - 220;
+        // let screen = document.querySelector('.card-body');
+        // console.log(screen.offsetWidth);
+        // let embed = document.getElementById('embed');
+        // embed.width = screen.offsetWidth - 50;
+        // embed.height = window.innerHeight - 220;
     </script>
 @endsection
