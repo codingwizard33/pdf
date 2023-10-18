@@ -18,7 +18,7 @@
 
             <!-- Preloader -->
             <div class="preloader flex-column justify-content-center align-items-center">
-                <span class="text-danger">6670 - PDF edit detection software</span>
+                <span class="text-danger">PDF edit detection software</span>
             </div>
 
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -126,7 +126,7 @@
             @yield('content')
 
             <footer class="main-footer">
-                <strong>Copyright &copy; 2023 <a class="text-danger" href="#">6670 - PDF edit detection software</a></strong>
+                <strong>Copyright &copy; 2023 <a class="text-danger" href="#">PDF edit detection software</a></strong>
                 All rights reserved.
             </footer>
             <aside class="control-sidebar control-sidebar-dark">

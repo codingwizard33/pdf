@@ -18,7 +18,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <span class="text-danger">6670 - PDF edit detection software</span>
+        <span class="text-danger">PDF edit detection software</span>
     </div>
 
     <div class="container-fluid">
